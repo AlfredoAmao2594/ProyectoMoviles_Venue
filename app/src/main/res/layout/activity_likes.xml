@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LikesActivity">
+
+    <TextView
+        android:id="@+id/txtTitleLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:text="@string/activity_likes_title"
+        android:textColor="#A80054"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleLikes2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_likes_title2"
+        android:textColor="#A80054"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleLikes" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/txtSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_likes_question"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleLikes2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubtitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnOpcion1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Restaurantes"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Bares"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Cafeteria"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnOpcion4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Criollo"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Jugueria"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="China"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Mexicana"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnOpcion8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Italiana"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Discobar"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Pastas"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Hindu"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnOpcion12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Tematico"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Carnes"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Buffet"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Asiatica"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnOpcion16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Barra Libre"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Cevicheria"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnOpcion18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/disenio_boton"
+                android:padding="10dp"
+                android:text="Japonesa"
+                android:textAlignment="center"
+                android:textColor="@color/vino"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegisterActually"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#0D7E73"
+        android:text="@string/activity_likes_next"
+        android:textStyle="bold"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/btnOmitir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/activity_likes_omitir"
+        android:textColor="@color/plomo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterActually" />
+
+    <ImageView
+        android:id="@+id/imgRegresarDates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrows" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

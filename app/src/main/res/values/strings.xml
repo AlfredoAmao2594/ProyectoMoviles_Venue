@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ProyectoMoviles</string>
+    <string name="activity_main_login">Iniciar Sesión</string>
+    <string name="activity_main_question">¿No tienes cuenta?</string>
+    <string name="activity_main_createUser">Crear Usuario</string>
+    <string name="createUser_activity_title">Crear Usuario</string>
+    <string name="createUser_activity_names">Nombres y Apellidos</string>
+    <string name="createUser_activity_email">Email</string>
+    <string name="createUser_activity_password">Contraseña</string>
+    <string name="activity_create_user">Continuar</string>
+    <string name="create_user_likes">Queremos conocerte más</string>
+    <string name="activity_user2_where">¿De Donde eres?</string>
+    <string name="activity_user2_number">¿Cual es tu numero de celular?</string>
+    <string name="activity_user2_continue">Continuar</string>
+    <string name="activity_login">Iniciar Sesión</string>
+    <string name="activity_login_name">Nombre de Usuario</string>
+    <string name="activity_login_password">Contraseña</string>
+    <string name="activity_login_start">Iniciar</string>
+    <string name="activity_welcome_continue">Continuar</string>
+    <string name="activity_welcome_title">¡Bienvenido!</string>
+    <string name="activity_likes_title">Queremos conocer</string>
+    <string name="activity_likes_title2">tus gustos</string>
+    <string name="activity_likes_question">¿Que lugares son tus preferencias?</string>
+    <string name="activity_likes_next">Registar</string>
+    <string name="activity_likes_omitir">Omitir</string>
+    <string name="activity_menu_home">Inicio</string>
+    <string name="activity_menu_search">Búsqueda</string>
+    <string name="activity_menu_bookings">Reservas</string>
+    <string name="activity_menu_profile">Perfil</string>
+</resources>
