@@ -5,18 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import com.cibertec.proyectomoviles.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMenuBinding
+    private lateinit var  fragment: Fragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_menu)
 
         val home: TextView = findViewById(R.id.btnMenu)
         val busqueda: TextView = findViewById(R.id.btnSearch)
         val reserva: TextView = findViewById(R.id.btnBoonkings)
         val perfil: TextView = findViewById(R.id.btnProfile)
-        val nColor = ContextCompat.getColor(this, R.color.vino)
-        val iconHome = home.compoundDrawables
 
 
         fun seleccion(textView: TextView) {
@@ -26,7 +30,7 @@ class MenuActivity : AppCompatActivity() {
             val colorDefault = ContextCompat.getColor(this,R.color.menu)
             val textoDefault = Color.parseColor("#757575BD")
 
-            home.setBackgroundColor(if (textView == home) colorSeleccion else colorDefault)
+            binding.btnMenu.setBackgroundColor(if (textView == home) colorSeleccion else colorDefault)
             home.setTextColor(if(textView == home )textoSeleccion else textoDefault)
             val newHome =
                 if (textView == home) R.drawable.baseline_home_white else R.drawable.baseline_home_black
@@ -37,7 +41,7 @@ class MenuActivity : AppCompatActivity() {
                 null
             )
 
-            busqueda.setBackgroundColor(if (textView == busqueda) colorSeleccion else colorDefault)
+            binding.btnSearch.setBackgroundColor(if (textView == busqueda) colorSeleccion else colorDefault)
             busqueda.setTextColor(if(textView == busqueda )textoSeleccion else textoDefault)
             val newSearch =
                 if (textView == busqueda) R.drawable.baseline_search_white else R.drawable.baseline_search_black
@@ -48,7 +52,7 @@ class MenuActivity : AppCompatActivity() {
                 null
             )
 
-            reserva.setBackgroundColor(if (textView == reserva) colorSeleccion else colorDefault)
+            binding.btnBoonkings.setBackgroundColor(if (textView == reserva) colorSeleccion else colorDefault)
             reserva.setTextColor(if(textView == reserva )textoSeleccion else textoDefault)
             val newReserva =
                 if (textView == reserva) R.drawable.baseline_menu_white else R.drawable.baseline_menu_book
@@ -59,7 +63,7 @@ class MenuActivity : AppCompatActivity() {
                 null
             )
 
-            perfil.setBackgroundColor(if (textView == perfil) colorSeleccion else colorDefault)
+            binding.btnProfile.setBackgroundColor(if (textView == perfil) colorSeleccion else colorDefault)
             perfil.setTextColor(if(textView == perfil )textoSeleccion else textoDefault)
             val newProfile =
                 if (textView == perfil) R.drawable.baseline_emoji_white else R.drawable.baseline_emoji_black
@@ -73,27 +77,38 @@ class MenuActivity : AppCompatActivity() {
         }
 
         seleccion(home)
+        fragment = HomeFragment()
+        addFragment()
 
-        home.setOnClickListener {
+        binding.btnMenu.setOnClickListener {
             seleccion(home)
-
-
+            fragment = HomeFragment()
+            addFragment()
 
         }
 
-        busqueda.setOnClickListener {
+        binding.btnSearch.setOnClickListener {
             seleccion(busqueda)
-
+            fragment = SearchFragment();
+            addFragment()
         }
 
-        reserva.setOnClickListener {
+        binding.btnBoonkings.setOnClickListener {
             seleccion(reserva)
+            fragment = BookingsFragment();
+            addFragment()
         }
 
-        perfil.setOnClickListener {
+        binding.btnProfile.setOnClickListener {
             seleccion(perfil)
+            fragment = PerfilFragment();
+            addFragment()
         }
+    }
 
-
+    private fun addFragment(){
+        if(fragment != null){
+            supportFragmentManager.beginTransaction().replace(R.id.container,fragment).commit()
+        }
     }
 }

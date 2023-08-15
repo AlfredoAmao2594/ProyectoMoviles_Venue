@@ -4,22 +4,30 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
-import android.util.Log
-import android.widget.Button
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import java.io.Console
+import androidx.lifecycle.lifecycleScope
+import com.cibertec.proyectomoviles.data.Api
+import com.cibertec.proyectomoviles.databinding.ActivityLikesBinding
+import com.cibertec.proyectomoviles.model.Usuario
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 class LikesActivity : AppCompatActivity() {
+
+    private lateinit var binding:ActivityLikesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_likes)
+        binding = ActivityLikesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val register: Button = findViewById(R.id.btnRegisterActually)
-        val omitir : TextView = findViewById(R.id.btnOmitir)
         val regresar3 : ImageView = findViewById(R.id.imgRegresarDates)
         val option1: TextView = findViewById(R.id.btnOpcion1)
         val option2: TextView = findViewById(R.id.btnOpcion2)
@@ -57,6 +65,13 @@ class LikesActivity : AppCompatActivity() {
         var interruptor16: Boolean = false
         var interruptor17: Boolean = false
         var interruptor18: Boolean = false
+
+        val bundle :Bundle? = intent.extras
+        var names : String? = null
+        var correo :String? = null
+        var clave : String? = null
+        var lugar : String? = null
+        var numero : String? = null
 
         var likeOne: String? = null
         var likeTwo: String? = null
@@ -413,27 +428,121 @@ class LikesActivity : AppCompatActivity() {
 
 
 
-        register.setOnClickListener {
-            val op1 = likeOne.toString()
-            val op2 = likeTwo.toString()
-            val op3 = likeThree.toString()
-            val op4 = likeFour.toString()
-            val op5 = likeFive.toString()
+        binding.btnRegisterActually.setOnClickListener {
+            val op1 = likeOne ?:""
+            val op2 = likeTwo ?:""
+            val op3 = likeThree ?:""
+            val op4 = likeFour ?:""
+            val op5 = likeFive ?:""
 
             if(likeOne == null || likeTwo == null || likeThree == null || likeFour == null || likeFive == null){
                 Toast.makeText(this,"Debes seleccionar 5 opciones",Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
-            val intent = Intent(this,WelcomeActivity::class.java).apply {
+            bundle?.let {bundleLibreDeNulo ->
+                names = bundleLibreDeNulo.getString("kEY_NOMBRE")?:"Desconocido"
+                correo = bundleLibreDeNulo.getString("kEY_EMAIL")?:"Desconocido"
+                clave = bundleLibreDeNulo.getString("KEY_PASS")?:"Desconocido"
+                lugar = bundleLibreDeNulo.getString("KEY_LUGAR")?:"Desconocido"
+                numero = bundleLibreDeNulo.getString("KEY_NUMERO")?:"Desconocido"
 
             }
-            startActivity(intent)
+
+            val nombres = names
+            val correos = correo
+            val claves = clave
+            val lugares = lugar
+            val numeros = numero
+
+            lifecycleScope.launch(Dispatchers.Main) {
+                try{
+
+                    binding.progressBar.visibility = VISIBLE
+
+                    val response = withContext(Dispatchers.IO){
+                        Api.build().saveUser(Usuario(nombres,correos,claves,lugares,numeros,op1,op2,op3,op4,op5))
+                    }
+
+                    if(response.isSuccessful){
+                        val result = response.body()
+                        result?.let {
+                            if(it.error ==  true){
+                                Toast.makeText(this@LikesActivity,"Usuario ya registrado",Toast.LENGTH_LONG).show()
+                                val intent = Intent(this@LikesActivity,CreateUserActivity::class.java)
+                                startActivity(intent)
+                            }else{
+                                val intent = Intent(this@LikesActivity,WelcomeActivity::class.java)
+                                startActivity(intent)
+                            }
+                        }
+                    }
+
+                }catch (ex:Exception){
+                    print(ex.message)
+                }finally {
+                    binding.progressBar.visibility = GONE
+                    onBackPressed()
+                }
+            }
+
+
+
         }
 
-        omitir.setOnClickListener {
-            val intent = Intent(this,WelcomeActivity::class.java).apply{}
-            startActivity(intent)
+        binding.btnOmitir.setOnClickListener {
+
+            val op1 = null
+            val op2 = null
+            val op3 = null
+            val op4 = null
+            val op5 = null
+
+            bundle?.let {bundleLibreDeNulo ->
+                names = bundleLibreDeNulo.getString("kEY_NOMBRE")?:"Desconocido"
+                correo = bundleLibreDeNulo.getString("kEY_EMAIL")?:"Desconocido"
+                clave = bundleLibreDeNulo.getString("KEY_PASS")?:"Desconocido"
+                lugar = bundleLibreDeNulo.getString("KEY_LUGAR")?:"Desconocido"
+                numero = bundleLibreDeNulo.getString("KEY_NUMERO")?:"Desconocido"
+
+            }
+
+            val nombres = names
+            val correos = correo
+            val claves = clave
+            val lugares = lugar
+            val numeros = numero
+
+            GlobalScope.launch(Dispatchers.Main) {
+                try{
+
+                    binding.progressBar.visibility = VISIBLE
+
+                    val response = withContext(Dispatchers.IO){
+                        Api.build().saveUser(Usuario(nombres,correos,claves,lugares,numeros,op1,op2,op3,op4,op5))
+                    }
+
+                    if(response.isSuccessful){
+                        val result = response.body()
+                        result?.let {
+                            if(it.error ==  true){
+                                Toast.makeText(this@LikesActivity,"Usuario ya registrado",Toast.LENGTH_LONG).show()
+                                val intent = Intent(this@LikesActivity,CreateUserActivity::class.java)
+                                startActivity(intent)
+                            }else{
+                                val intent = Intent(this@LikesActivity,WelcomeActivity::class.java)
+                                startActivity(intent)
+                            }
+                        }
+                    }
+
+                }catch (ex:Exception){
+                    print(ex.message)
+                }finally {
+                    binding.progressBar.visibility = GONE
+                }
+            }
+
         }
 
         regresar3.setOnClickListener{
@@ -441,8 +550,7 @@ class LikesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
     }
+
+
 }

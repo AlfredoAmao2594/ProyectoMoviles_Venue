@@ -15,11 +15,17 @@ class DatesActivity : AppCompatActivity() {
 
         val regresar2: ImageView = findViewById(R.id.imgRetorn2)
         val continuar2: Button = findViewById(R.id.btnContinue)
+        val bundle :Bundle? = intent.extras
+        var names : String? = null
+        var correo :String? = null
+        var clave : String?= null
 
         regresar2.setOnClickListener{
             val intent = Intent(this,CreateUserActivity::class.java)
             startActivity(intent)
         }
+
+
 
         val edtPlace: TextInputEditText = findViewById(R.id.edtLocate)
         val edtNumber: TextInputEditText = findViewById(R.id.edtNumber)
@@ -37,9 +43,22 @@ class DatesActivity : AppCompatActivity() {
                 Toast.makeText(this,"Debe ingresar numero de contacto", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+            bundle?.let {bundleLibreDeNulo ->
+                names = bundleLibreDeNulo.getString("KEY_NAMES")?:"Desconocido"
+                correo = bundleLibreDeNulo.getString("KEY_CORREO")?:"Desconocido"
+                clave = bundleLibreDeNulo.getString("KEY_CLAVE")?:"Desconocido"
+
+            }
+
+            val nombres = names
+            val correos = correo
+            val claves = clave
 
             val bundle = Bundle().apply {
 
+                putString("kEY_NOMBRE",nombres)
+                putString("kEY_EMAIL",correos)
+                putString("KEY_PASS",claves)
                 putString("KEY_LUGAR", place)
                 putString("KEY_NUMERO",number)
 

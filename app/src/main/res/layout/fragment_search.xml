@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookingsFragment">
+    tools:context=".SearchFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/vino"
         android:paddingBottom="10dp"
+        android:background="@color/vino"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/imgReturnMenu2"
             android:layout_width="30dp"
@@ -25,18 +25,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtBookingsTitle"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilBuscar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textColor="@color/white"
             android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="@string/activity_menu_reservas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgReturnMenu2" />
+            app:layout_constraintTop_toBottomOf="@+id/imgReturnMenu2">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/border_radius"
+                android:drawableStart="@drawable/baseline_search_black"
+                android:drawableEnd="@drawable/baseline_filter"
+                android:drawablePadding="8dp"
+                android:hint="@string/activity_menu_buscar"
+                android:paddingHorizontal="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

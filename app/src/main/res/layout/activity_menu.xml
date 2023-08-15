@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25304136" />
+        app:layout_constraintGuide_percent="0.25547445" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -63,11 +63,11 @@
         android:id="@+id/btnBoonkings"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_bookings"
         android:background="@color/menu"
         android:drawableTop="@drawable/baseline_menu_book"
         android:gravity="center"
         android:paddingVertical="8dp"
+        android:text="@string/activity_menu_bookings"
         android:textColor="@color/letraMenu"
         android:textStyle="bold"
         app:cornerRadius="0dp"
@@ -79,16 +79,27 @@
         android:id="@+id/btnProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/activity_menu_profile"
         android:background="@color/menu"
         android:drawableTop="@drawable/baseline_emoji_black"
         android:gravity="center"
         android:paddingVertical="8dp"
+        android:text="@string/activity_menu_profile"
         android:textColor="@color/letraMenu"
         android:textStyle="bold"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline5" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

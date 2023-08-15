@@ -27,4 +27,35 @@
     <string name="activity_menu_search">Búsqueda</string>
     <string name="activity_menu_bookings">Reservas</string>
     <string name="activity_menu_profile">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_home_title">Inicio</string>
+    <string name="fragment_home_restaurant">Restaurantes</string>
+    <string name="fragment_home_bar">Bares</string>
+    <string name="fragment_home_cafe">Cafeteria</string>
+    <string name="fragment_home_beer">Cerveceria</string>
+    <string name="fragment_home_juice">Jugueria</string>
+    <string name="fragment_home_subtitle">Lugares Para Reservar</string>
+    <string name="activity_menu_reservas">Mis Reservas</string>
+    <string name="activity_menu_buscar">Buscar</string>
+    <string name="fragment_search_title">Resultados de la Búsqueda</string>
+    <string name="fragment_nuevo_usuario">Nuevo Restaurante</string>
+    <string name="activity_perfilRestaurante_categoria">Categoria</string>
+    <string name="activity_perfilRestaurante_nombre">Restaurante</string>
+    <string name="activity_perfilRestaurante_descripcion">descripcion</string>
+    <string name="activity_perfilRestaurante_pagina">Pagina WEB</string>
+    <string name="activity_perfilRestaurante_reservar">Reservar</string>
+    <string name="activity_perfilRestaurante_carta">Carta</string>
+    <string name="activity_perfilRestraunte_descripcion">Direccion</string>
+    <string name="activity_reserva_title">Reserva</string>
+    <string name="activity_reserva_nombre">Nombre y Apellido</string>
+    <string name="activity_reserva_sede">Sede</string>
+    <string name="activity_reserva_cantidad">N° de Personas</string>
+    <string name="activity_reserva_fecha">Fecha</string>
+    <string name="activity_reserva_reservar">Reservar</string>
+    <string name="activity_codigo_title">¡Felicitaciones!</string>
+    <string name="activity_codigo_parrafo1">Tu reserva fue procesada con éxito</string>
+    <string name="activity_codigo_parrafo2">Presenta tu codigo QR</string>
+    <string name="activity_codigo_parrafo3">al restaurante</string>
+    <string name="volver_al_inicio">Volver al Inicio</string>
 </resources>
