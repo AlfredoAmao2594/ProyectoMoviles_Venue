@@ -1,9 +1,11 @@
 package com.cibertec.proyectomoviles.data
 
 import com.cibertec.proyectomoviles.model.Credencial
+import com.cibertec.proyectomoviles.model.Reserva
 import com.cibertec.proyectomoviles.model.Restaurante
 import com.cibertec.proyectomoviles.model.Result
 import com.cibertec.proyectomoviles.model.Usuario
+import com.cibertec.proyectomoviles.model.reservaHecha
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,6 +35,15 @@ object Api {
 
         @GET("kotlin/Obtener/BuscarRestaurantePorId")
         suspend fun getRestaurant(@Query("id")id:Int):Response<Restaurante>
+
+        @POST("kotlin/Reserva/CrearReserva")
+        suspend fun saveReserva(@Body request:Reserva ):Response<Result>
+
+        @GET("kotlin/Listado/ListarReserva")
+        suspend fun getAllReserva(): Response<List<reservaHecha>>
+
+        @GET("kotlin/Obtener/BuscarReservaPorId")
+        suspend fun getReserva(@Query("id")id:Int):Response<Reserva>
     }
 
     fun build() : MyServices{

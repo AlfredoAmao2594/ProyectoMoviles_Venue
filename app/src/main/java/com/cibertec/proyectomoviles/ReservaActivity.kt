@@ -1,13 +1,23 @@
 package com.cibertec.proyectomoviles
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import com.cibertec.proyectomoviles.data.Api
 import com.cibertec.proyectomoviles.databinding.ActivityPerfilRestauranteBinding
 import com.cibertec.proyectomoviles.databinding.ActivityReservaBinding
+import com.cibertec.proyectomoviles.model.Reserva
+import com.cibertec.proyectomoviles.model.Restaurante
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ReservaActivity : AppCompatActivity() {
 
@@ -291,6 +301,45 @@ class ReservaActivity : AppCompatActivity() {
             bloqueo()
         }
 
+        binding.btnReserva.setOnClickListener {
+
+            val code = codigo
+            val nombre = binding.edtNombrePersona.text.toString()
+            val sede = binding.edtSede.text.toString()
+            val cantidad = binding.edtCantidad.text.toString().toInt()
+            val fecha = binding.edtFecha.text.toString()
+
+
+
+            lifecycleScope.launch {
+
+                try{
+
+                    binding.progressBar6.visibility = View.VISIBLE
+
+                    val response = withContext(Dispatchers.IO){
+                        Api.build().saveReserva(Reserva(0,code,nombre,sede,cantidad,fecha,horario))
+                    }
+
+                    if(response.isSuccessful){
+                        val result = response.body()
+                        result?.let {
+                            if(it.error ==  true){
+                                Toast.makeText(this@ReservaActivity,it.mensaje, Toast.LENGTH_LONG).show()
+                            }else{
+                                val intent= Intent(this@ReservaActivity,CodigoActivity::class.java)
+                                startActivity(intent)
+                            }
+                        }
+                    }
+
+                }catch (ex:Exception){
+                    print(ex.message)
+                }finally {
+                    binding.progressBar6.visibility = View.GONE
+                }
+            }
+        }
 
 
     }

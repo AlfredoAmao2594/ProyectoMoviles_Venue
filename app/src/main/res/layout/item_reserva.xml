@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardMaxElevation="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/imgRestauranteReserva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtNombreReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Nombre"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgRestauranteReserva"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCategoriaReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Categoria"
+            android:textColor="@color/letraMenu"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgRestauranteReserva"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreReserva" />
+
+        <TextView
+            android:id="@+id/txtFechaReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:text="Fecha : "
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgRestauranteReserva"
+            app:layout_constraintTop_toBottomOf="@+id/txtCategoriaReserva" />
+
+        <TextView
+            android:id="@+id/txtFechaReserva2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:text="[fecha]"
+            app:layout_constraintStart_toEndOf="@+id/txtFechaReserva"
+            app:layout_constraintTop_toBottomOf="@+id/txtCategoriaReserva" />
+
+        <TextView
+            android:id="@+id/txtHoraReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:text="Hora : "
+            app:layout_constraintStart_toEndOf="@+id/imgRestauranteReserva"
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaReserva" />
+
+        <TextView
+            android:id="@+id/txtHoraReserva2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:text="[hora]"
+            app:layout_constraintStart_toEndOf="@+id/txtHoraReserva"
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaReserva2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

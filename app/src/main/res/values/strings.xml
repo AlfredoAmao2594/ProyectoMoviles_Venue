@@ -58,4 +58,11 @@
     <string name="activity_codigo_parrafo2">Presenta tu codigo QR</string>
     <string name="activity_codigo_parrafo3">al restaurante</string>
     <string name="volver_al_inicio">Volver al Inicio</string>
+    <string name="activity_code_reserva">Datos de la Reserva</string>
+    <string name="activity_code_volver">Volver al Listado</string>
+    <string name="activity_detalle_title">Presenta el codigo QR para que preparen tu pedido</string>
+    <string name="activity_detalle_subtitle">Resumen de la Reserva</string>
+    <string name="activity_detalle_nombre">Nombre y Apellido</string>
+    <string name="activity_detalle_sede">Sede</string>
+    <string name="activity_detalle_personas">N° de Personas</string>
 </resources>
